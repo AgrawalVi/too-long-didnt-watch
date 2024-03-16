@@ -1,7 +1,16 @@
-import { Inter } from "next/font/google";
+import { Economica } from "next/font/google";
 import "./globals.css";
+import Head from 'next/head'
 
-const inter = Inter({ subsets: ["latin"] });
+export function HeadMetaTags({ metadata }) {
+  return (
+      <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </Head>
+  )
+}
+
+const economica = Economica({ subsets: ["latin"], weight:'700' });
 
 export const metadata = {
   title: "TLDW: Too Long Didn't Watch",
@@ -11,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={economica.className}>{children}</body>
     </html>
   );
 }
